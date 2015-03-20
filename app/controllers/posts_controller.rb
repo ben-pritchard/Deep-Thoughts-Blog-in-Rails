@@ -13,12 +13,26 @@ class PostsController < ApplicationController
       flash[:notice] = "Your deep thought has entered the physical world successfully!"
       redirect_to posts_path
     else
-      render new
+      render :new
     end
   end
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(params[:post])
+      flash[:notice] = "You have updated your deep thought successfully!"
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
   end
 
 private
