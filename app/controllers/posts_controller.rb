@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "Your thought has entered the physical world successfully!"
+      flash[:notice] = "Your deep thought has entered the physical world successfully!"
       redirect_to posts_path
     else
       render new
