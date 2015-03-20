@@ -9,7 +9,7 @@
   <h3>All posts:</h3>
   <ul>
     <% @posts.each do |post| %>
-      <li><%= post.title %></li>
+      <li><%= link_to post.title, post_path(post) %></li>
     <% end %>
   </ul>
 <% end %>
