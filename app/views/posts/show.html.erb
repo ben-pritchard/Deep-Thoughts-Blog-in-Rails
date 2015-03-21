@@ -1,14 +1,28 @@
-<p>
-  Date posted: <%= @post.created_at %>
-</p>
+<span class="success"><%= flash[:notice] %></span>
+<span class="fail"><%= flash[:alert] %></span>
+
 <h1><%= @post.title %></h1>
+
+<h4>Date posted: <%= @post.created_at %></h4>
 <br>
 <p>
   <%= @post.entry %>
 </p>
 
-<%= link_to "Edit", edit_post_path, :class => "btn btn-warning" %>
+<%= link_to "Leave a comment", new_post_comment_path(@post), :class => "btn btn-success" %>
+
+<% if @post.comments.any? %>
+  <h4>Comments:</h4>
+  <% @post.comments.each do |comment| %>
+    <ul>
+      <li><%= comment.body %><%= link_to "Edit comment", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-default" %></li>
+    </ul>
+  <% end %>
+
+<% end %>
+
+<%= link_to "Edit Post", edit_post_path, :class => "btn btn-warning" %>
 
 <%= link_to "Delete post", post_path(@post), :data => { :confirm => "Are you sure you want to erase this thought from the physical world?", :method => "delete" }, :class => "btn btn-danger" %>
 
-<%= link_to "Back to Posts", posts_path, :class => "btn btn-default" %>
+<%= link_to "Back to Posts", posts_path, :class => "btn btn-primary" %>
