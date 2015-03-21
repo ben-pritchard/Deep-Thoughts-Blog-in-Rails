@@ -15,7 +15,10 @@
   <h4>Comments:</h4>
   <% @post.comments.each do |comment| %>
     <ul>
-      <li><%= comment.body %><%= link_to "Edit comment", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-default" %></li>
+      <li><%= comment.body %>
+        <%= link_to "Alter", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-default" %>
+        <%= link_to "Erase", post_comment_path(@post, comment), :data => { :method => "delete" }, :class => "btn btn-xs btn-default" %>
+      </li>
     </ul>
   <% end %>
 

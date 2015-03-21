@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe "edit a comment process" do
-  it "edits a comment" do
+describe "delete a comment process" do
+  it "deletes a comment" do
     visit posts_path
     click_on "Add new post"
     fill_in "Title", :with => "To be, or not to be..."
@@ -11,9 +11,7 @@ describe "edit a comment process" do
     click_on "Leave a comment"
     fill_in "Body", :with => "I would rather be."
     click_on "Comment"
-    click_on "Alter"
-    fill_in "Body", :with => "Man, I would way rather be!"
-    click_on "Comment"
+    click_on "Erase"
     expect(page).to have_content "Date posted:"
   end
 end
