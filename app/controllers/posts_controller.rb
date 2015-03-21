@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params[:post])
+    if @post.update(post_params)
       flash[:notice] = "You have updated your deep thought successfully!"
       redirect_to post_path(@post)
     else
@@ -46,4 +46,5 @@ private
   def post_params
     params.require(:post).permit(:title, :entry)
   end
+
 end
