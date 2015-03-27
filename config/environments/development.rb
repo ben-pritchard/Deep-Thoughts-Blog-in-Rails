@@ -44,4 +44,6 @@ Rails.application.configure do
 
 
   config.assets.initialize_on_precompile = false
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

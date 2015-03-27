@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "delete a comment process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
+  end
+
   it "deletes a comment" do
     visit posts_path
     click_on "Add new post"

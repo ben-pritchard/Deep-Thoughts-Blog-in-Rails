@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "edit a comment process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
+  end
+
   it "edits a comment" do
     visit posts_path
     click_on "Add new post"

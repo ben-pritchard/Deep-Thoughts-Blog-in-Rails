@@ -1,10 +1,21 @@
 <h1><%= @post.title %></h1>
 
 <h4>Date posted: <%= @post.created_at %></h4>
+
 <br>
+
+<% if @post.photo %>
+  <%= image_tag @post.photo.url %>
+  <%= image_tag @post.photo.url(:medium) %>
+  <%= image_tag @post.photo.url(:thumb) %>
+<% end %>
+
+<br>
+
 <p>
   <%= @post.entry %>
 </p>
+
 
 <% if @post.comments.any? %>
   <h4>Comments:</h4>

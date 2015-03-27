@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "delete a post process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
+  end
+
   it "deletes a post" do
     visit posts_path
     click_on "Add new post"

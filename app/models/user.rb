@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :username
   after_create :send_welcome_email
+  has_many :posts
+  has_many :comments
 
   def send_welcome_email
     UserMailer.signup_confirmation(self).deliver_now

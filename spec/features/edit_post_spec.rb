@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "the edit a post process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
+  end
+
   it "edits a post" do
     visit posts_path
     click_on "Add new post"
