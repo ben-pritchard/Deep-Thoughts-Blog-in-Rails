@@ -1,28 +1,27 @@
-== README
+###DESCRIPTION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails blogging app focused on collecting deep thoughts.
 
-Things you may want to cover:
+Deep thoughts **only!** (e.g. I'm hungry.)
 
-* Ruby version
+###SETUP INSTRUCTIONS
 
-* System dependencies
+To set up your server from your terminal, go to your project directory and enter `rails s`
 
-* Configuration
+Make sure postgres is running by going to your terminal and running `postgres`
 
-* Database creation
+Then go to localhost:3000 in your browser to view the app.
 
-* Database initialization
+###COPYRIGHT INFORMATION
 
-* How to run the test suite
+GPL v2
 
-* Services (job queues, cache servers, search engines, etc.)
+###LICENSE INFORMATION
 
-* Deployment instructions
+GPL v2
 
-* ...
+###AUTHOR
 
+Ben Pritchard
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ben.s.pritchard@gmail.com
