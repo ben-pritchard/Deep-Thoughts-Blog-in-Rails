@@ -7,3 +7,9 @@
   background-color: #f2dede;
   display: block;
 }
+
+body {
+  background-image: url(http://i.ytimg.com/vi/dceGmcyy0CY/maxresdefault.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+}
