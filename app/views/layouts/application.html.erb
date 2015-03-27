@@ -10,8 +10,10 @@
 </head>
 <body>
   <div class="container">
+    <span class="success"><%= flash[:notice] %></span>
+    <span class="fail"><%= flash[:alert] %></span>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
+      Hello <strong><%= current_user.username %>, you're looking nice today!</strong>.
       <%= link_to 'Edit profile', edit_user_registration_path %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
