@@ -12,6 +12,8 @@ Make sure postgres is running by going to your terminal and running `postgres`
 
 Then go to localhost:3000 in your browser to view the app.
 
+Or check it out on heroku: https://deep-thoughts-blog.herokuapp.com/
+
 ###COPYRIGHT INFORMATION
 
 GPL v2
