@@ -9,15 +9,22 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     if @comment.save
       flash[:notice] = "Comment added successfully!"
-      redirect_to post_path(@post)
+      respond_to do |format|
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
     else
-      render :new
+      render :new #don't need, what to replace it with?
     end
   end
 
   def edit
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.js
+    end
   end
 
   def update
@@ -25,9 +32,12 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
       flash[:notice] = "Comment successfully updated!"
-      redirect_to post_path(@post)
+      respond_to do |format|
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
     else
-      render :edit
+      render :edit #don't need, what to replace it with?
     end
   end
 
@@ -36,7 +46,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     flash[:notice] = "Comment destroyed!"
-    redirect_to post_path(@post)
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.js
+    end
   end
 
 private

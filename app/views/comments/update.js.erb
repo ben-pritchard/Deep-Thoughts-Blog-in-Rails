@@ -1,0 +1,3 @@
+$('#new_comment').remove();
+$('#new_comment_button').show();
+$('#edit_comment_<%= @comment.id %>').replaceWith('<%= j render(@comment) %>')
