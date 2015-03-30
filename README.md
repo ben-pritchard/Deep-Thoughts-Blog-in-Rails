@@ -27,3 +27,11 @@ GPL v2
 Ben Pritchard
 
 ben.s.pritchard@gmail.com
+
+<br>
+
+<% if @post.photo %>
+  <%= image_tag @post.photo.url %>
+  <%= image_tag @post.photo.url(:medium) %>
+  <%= image_tag @post.photo.url(:thumb) %>
+<% end %>

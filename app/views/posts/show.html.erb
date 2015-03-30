@@ -4,14 +4,6 @@
 
 <br>
 
-<% if @post.photo %>
-  <%= image_tag @post.photo.url %>
-  <%= image_tag @post.photo.url(:medium) %>
-  <%= image_tag @post.photo.url(:thumb) %>
-<% end %>
-
-<br>
-
 <p>
   <%= @post.entry %>
 </p>
