@@ -20,16 +20,16 @@ class CommentsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
-    @comment = Comment.find(params[:id])
+    @comment = @post.comments.find(params[:id])
     respond_to do |format|
-      format.html { redirect_to post_path(@post) }
+      format.html
       format.js
     end
   end
 
   def update
     @post = Post.find(params[:post_id])
-    @comment = Comment.find(params[:id])
+    @comment = @post.comments.find(params[:id])
     if @comment.update(comment_params)
       # flash[:notice] = "Comment successfully updated!"
       respond_to do |format|
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = Comment.find(params[:id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
     # flash[:notice] = "Comment destroyed!"
     respond_to do |format|
