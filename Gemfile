@@ -2,13 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
-gem 'sass-rails'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootswatch-rails'
 
 group :development do
   gem 'byebug'

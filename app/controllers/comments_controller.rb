@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save
-      flash[:notice] = "Comment added successfully!"
+      # flash[:notice] = "Comment added successfully!"
       respond_to do |format|
         format.html { redirect_to post_path(@post) }
         format.js
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      flash[:notice] = "Comment successfully updated!"
+      # flash[:notice] = "Comment successfully updated!"
       respond_to do |format|
         format.html { redirect_to post_path(@post) }
         format.js
@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:notice] = "Comment destroyed!"
+    # flash[:notice] = "Comment destroyed!"
     respond_to do |format|
       format.html { redirect_to post_path(@post) }
       format.js

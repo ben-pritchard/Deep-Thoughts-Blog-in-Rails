@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootswatch/cerulean/variables";
+@import "bootstrap";
+
+body {
+  background-image: url(http://i.ytimg.com/vi/dceGmcyy0CY/maxresdefault.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.success {
+  background-color: #DFF0D8;
+  display: block;
+}
+
+.fail {
+  background-color: #f2dede;
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}

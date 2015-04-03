@@ -4,18 +4,17 @@
 
 <br>
 
-<p>
+<p class="bold">
   <%= @post.entry %>
 </p>
 
 
-<% if @post.comments.any? %>
+<div class="comments" id="comments">
   <h4>Comments:</h4>
-  <div class="comments" id="comments">
+  <% if @post.comments.any? %>
     <%= render @post.comments %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
 
 <%= link_to "Leave a comment", new_post_comment_path(@post), class: "btn btn-success", id: "new_comment_button", remote: true %>
 
