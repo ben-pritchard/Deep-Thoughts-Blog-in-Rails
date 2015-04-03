@@ -7,13 +7,16 @@ describe "add a comment to a post process" do
     sign_in(user)
   end
 
-  it "adds a new comment" do
-    visit posts_path
-    click_on "Add new post"
-    fill_in "Title", with: "To be, or not to be..."
-    fill_in "Entry", :with => "that is the question"
-    click_on "Submit"
-    click_on "To be, or not to be..."
+  it "adds a new comment", js: true do
+    post = FactoryGirl.create(:post, user_id: user.id)
+    visit post_path(post)
+    save_screenshot('addcomment.jpg')
+    # visit posts_path
+    # click_on "Add new post"
+    # fill_in "Title", with: "To be, or not to be..."
+    # fill_in "Entry", :with => "that is the question"
+    # click_on "Submit"
+    # click_on "To be, or not to be..."
     click_on "Leave a comment"
     fill_in "Body", :with => "I would rather be."
     click_on "Comment"
