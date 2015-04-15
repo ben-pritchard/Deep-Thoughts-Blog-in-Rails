@@ -4,6 +4,20 @@ This is a Ruby on Rails blogging app focused on collecting deep thoughts.
 
 Deep thoughts **only!** (e.g. I'm hungry.)
 
+**Beware**: things that don't work yet:
+
+  Rspec completely crapped out on me and just hangs when I run it (even when I tried rolling back to this morning when rspec was working)
+
+  Paperclip displaying "Missing" photos (whether loaded or not)
+
+  Twilio also not sending messages but hopefully I can learn why not at some point this week...
+
+  <% if @post.photo %>
+    <%= image_tag @post.photo.url %>
+    <%= image_tag @post.photo.url(:medium) %>
+    <%= image_tag @post.photo.url(:thumb) %>
+  <% end %>
+
 ###SETUP INSTRUCTIONS
 
 To set up your server from your terminal, go to your project directory and enter `rails s`
@@ -27,3 +41,5 @@ GPL v2
 Ben Pritchard
 
 ben.s.pritchard@gmail.com
+
+<br>

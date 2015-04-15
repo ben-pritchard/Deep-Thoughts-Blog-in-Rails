@@ -1,7 +1,10 @@
-<%= render "layouts/errors", :object => @comment %>
+<div id="new_comment_form">
+  <%= render "layouts/errors", :object => @comment %>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Comment" , :class => "btn btn-success" %>
-<% end %>
+  <%= form_for [@post, @comment], remote: true do |f| %>
+    <%= f.text_area :body, :rows => 5, :cols => "90" %>
+    <br>
+    <%= f.submit "Comment" , :class => "btn btn-success" %>
+    <%= link_to "Nevermind", :back, :class => "btn btn-primary" %>
+  <% end %>
+</div>

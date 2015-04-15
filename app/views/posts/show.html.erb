@@ -4,33 +4,19 @@
 
 <br>
 
-<% if @post.photo %>
-  <%= image_tag @post.photo.url %>
-  <%= image_tag @post.photo.url(:medium) %>
-  <%= image_tag @post.photo.url(:thumb) %>
-<% end %>
-
-<br>
-
-<p>
+<p class="bold">
   <%= @post.entry %>
 </p>
 
 
-<% if @post.comments.any? %>
+<div class="comments" id="comments">
   <h4>Comments:</h4>
-  <% @post.comments.each do |comment| %>
-    <ul>
-      <li><%= comment.body %>
-        <%= link_to "Alter", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-default" %>
-        <%= link_to "Erase", post_comment_path(@post, comment), :data => { :method => "delete" }, :class => "btn btn-xs btn-default" %>
-      </li>
-    </ul>
+  <% if @post.comments.any? %>
+    <%= render @post.comments %>
   <% end %>
+</div>
 
-<% end %>
-
-<%= link_to "Leave a comment", new_post_comment_path(@post), :class => "btn btn-success" %>
+<%= link_to "Leave a comment", new_post_comment_path(@post), class: "btn btn-success", id: "new_comment_button", remote: true %>
 
 <br>
 <br>

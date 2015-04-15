@@ -1,0 +1,6 @@
+<div class="well" id="comment_<%= comment.id %>">
+  <%= simple_format(comment.body) %>
+  <%= link_to "Alter", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-default", remote: true %>
+  <%= link_to "Erase", post_comment_path(@post, comment), :data => { :method => "delete" }, :class => "btn btn-xs btn-default", remote: true %>
+  <br>
+</div>
