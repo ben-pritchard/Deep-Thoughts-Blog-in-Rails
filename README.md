@@ -10,7 +10,7 @@ Deep thoughts **only!** (e.g. I'm hungry.)
 
   Paperclip displaying "Missing" photos (whether loaded or not)
 
-  Twilio also not sending messages but hopefully I can learn why not at some point this week...
+  I took this out:
 
   <% if @post.photo %>
     <%= image_tag @post.photo.url %>
