@@ -14,7 +14,7 @@ class Comment < ActiveRecord::Base
       :user => ENV['TWILIO_ACCOUNT_SID'],
       :password => ENV['TWILIO_AUTH_TOKEN'],
       :payload => { :Body => "Someone commented on your post!",
-                    :To => 5412311102,
+                    :To => "5412311102",
                     :From => ENV['USER_NUMBER']
       }
     ).execute

@@ -11,6 +11,7 @@ gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootswatch-rails'
+gem 'rest-client'
 
 group :development do
   gem 'byebug'
@@ -26,6 +27,7 @@ group :test, :development do
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
 end
 
 group :test do
