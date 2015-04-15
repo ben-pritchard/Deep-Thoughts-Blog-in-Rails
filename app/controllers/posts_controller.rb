@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-binding.pry
     @post.user_id = current_user.id
     if @post.save
       # flash[:notice] = "Your deep thought has entered the physical world successfully!"
