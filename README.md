@@ -8,16 +8,6 @@ Deep thoughts **only!** (e.g. I'm hungry.)
 
   Rspec completely crapped out on me and just hangs when I run it (even when I tried rolling back to this morning when rspec was working)
 
-  Paperclip displaying "Missing" photos (whether loaded or not)
-
-  I took this out:
-
-  <% if @post.photo %>
-    <%= image_tag @post.photo.url %>
-    <%= image_tag @post.photo.url(:medium) %>
-    <%= image_tag @post.photo.url(:thumb) %>
-  <% end %>
-
 ###SETUP INSTRUCTIONS
 
 To set up your server from your terminal, go to your project directory and enter `rails s`
