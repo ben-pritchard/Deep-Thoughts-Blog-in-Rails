@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource :post
+  load_and_authorize_resource :through => :post
+
   def new
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.new
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(comment_params)
+
     if @comment.save
       # flash[:notice] = "Comment added successfully!"
       respond_to do |format|
@@ -19,8 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+
     respond_to do |format|
       format.html
       format.js
@@ -28,8 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+
     if @comment.update(comment_params)
       # flash[:notice] = "Comment successfully updated!"
       respond_to do |format|
@@ -42,8 +40,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
+
     @comment.destroy
     # flash[:notice] = "Comment destroyed!"
     respond_to do |format|

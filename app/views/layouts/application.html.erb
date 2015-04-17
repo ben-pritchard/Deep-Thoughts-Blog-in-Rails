@@ -11,9 +11,10 @@
     <span class="success"><%= flash[:notice] %></span>
     <span class="fail"><%= flash[:alert] %></span>
     <% if user_signed_in? %>
-      Hello <strong><%= current_user.username %>, you're looking thoughtful today!</strong>.
+      Hello <strong><%= current_user.username %>, you're looking thoughtful today!</strong> |
       <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
+      <%= link_to "Change Role to Admin (only use this if you are honest please :)", admin_path %> |
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>

@@ -4,7 +4,10 @@
 
 <br>
 
-<%= image_tag @post.photo.url(:medium) %>
+<% if @post.photo_file_name %>
+  <%= image_tag @post.photo.url(:medium) %>
+<% end %>
+
 
 <p class="bold">
   <%= @post.entry %>
@@ -23,8 +26,10 @@
 <br>
 <br>
 
-<%= link_to "Edit Post", edit_post_path, :class => "btn btn-warning" %>
+<% if can? :update, @post %>
+  <%= link_to "Edit Post", edit_post_path, :class => "btn btn-warning" %>
 
-<%= link_to "Delete post", post_path(@post), :data => { :confirm => "Are you sure you want to erase this thought from the physical world?", :method => "delete" }, :class => "btn btn-danger" %>
+  <%= link_to "Delete post", post_path(@post), :data => { :confirm => "Are you sure you want to erase this thought from the physical world?", :method => "delete" }, :class => "btn btn-danger" %>
+<% end %>
 
 <%= link_to "Back to Posts", posts_path, :class => "btn btn-primary" %>
